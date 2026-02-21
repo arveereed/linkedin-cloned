@@ -48,7 +48,7 @@ export const signup = async (req, res) => {
     res.cookie("jwt-linkedin", token, {
       httpOnly: true, // prevent XSS attack
       maxAge: 3 * 24 * 60 * 60 * 1000, // 3 days
-      sameSite: "strict", // prevent CSRF
+      sameSite: "none", // prevent CSRF
       secure: process.env.NODE_ENV === "production", // prevents man-in-the-middle attacks
     });
 
@@ -91,7 +91,7 @@ export const login = async (req, res) => {
     res.cookie("jwt-linkedin", token, {
       httpOnly: true,
       maxAge: 3 * 24 * 60 * 60 * 1000,
-      sameSite: "strict",
+      sameSite: "none",
       secure: process.env.NODE_ENV === "production",
     }); // 3 days
 
