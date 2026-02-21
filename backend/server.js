@@ -22,6 +22,8 @@ app.use(
   cors({
     origin: process.env.CLIENT_URL,
     credentials: true, // allow client to send cookies
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
 
